@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Configurações</title>
+    <script src="../../validations.js"></script>
+    <script src="configuracoes.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+    <script src="../../firebase-init.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="configuracoes.css">
+</head>
+<body>
+    <header>
+        <div class="cabecalho-sup">
+            <div class="imagem" ></div>
+            <div>
+                <button type="button" class="botao-b" onclick="logout()">Sair</button>
+            </div>
+        </div>
+        <div class="cabecalho-inf">
+            <div>
+                <button type="button" class="botao" onclick="telaDispositivos()">Dispositivos e Sensores</button>
+            </div>
+            <div>
+                <button type="button" class="botao" onclick="telaInformacao()">Informações</button>
+            </div>
+            <div>
+                <button type="button" class="botao" onclick="telaRelatorio()">Relatório</button>
+            </div>
+            <div>
+                <button type="button" class="botao" onclick="telaConfig()">Configurações</button>
+            </div>
+        </div>
+        
+    </header>
+    <div class="corpo">
+        <h1>Trabalhando com leds e ESP32</h1>
+        <img src="../../imagens/codigo-esp-led.png" alt="">
+        <img src="../../imagens/esp-led.png" alt="">
+        <h1>Trabalhando com sensor de umidade e ESP32</h1>
+        <img src="../../imagens/codigo-esp-umidade.png" alt="">
+        <img src="../../imagens/esp-umidade.png" alt="">
+        <h1>Trabalhando com sensor LDR e ESP32</h1>
+        <img src="../../imagens/codigo-espp-ldr.png" alt="">
+        <img src="../../imagens/esp-ldr.png" alt="">
+        <h1>Trabalhando com firebase e ESP32</h1>
+        <img src="../../imagens/codigo-esp-firebase-1.png" alt="">
+        <img src="../../imagens/codigo-esp-firebase-2.png" alt="">
+
+    </div>
+    <footer>
+        <p>TODOS OS DIREITOS RESERVADOS</p>
+        <p>Pré TCC - Copyright © 2023</p>
+    </footer>
+    
+</body>
+<script>
+    firebase.auth().onAuthStateChanged(user => {
+        if (!user){
+            window.location.href = "../../index.html";
+        }
+    })
+
+</script>
+
+</html>

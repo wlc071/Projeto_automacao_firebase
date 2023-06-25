@@ -7,11 +7,11 @@ function logout(){
 }
 
 function telaDispositivos(){
-    window.location.href="home.html";
+    window.location.href="../home/home.html";
 }
 
 function telaInformacao(){
-    window.location.href="../informacoes/informacoes.html";
+    window.location.href="informacoes.html";
 }
 
 function telaRelatorio(){
@@ -21,6 +21,3 @@ function telaRelatorio(){
 function telaConfig(){
     window.location.href="../configuracoes/configuracoes.html";
 }
-
-
-

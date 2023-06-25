@@ -11,6 +11,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
     <script src="../../firebase-init.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="home.css">
 </head>
@@ -24,13 +25,16 @@
         </div>
         <div class="cabecalho-inf">
             <div>
-                <button type="button" class="botao">Dispositivos e Sensores</button>
+                <button type="button" class="botao" onclick="telaDispositivos()">Dispositivos e Sensores</button>
             </div>
             <div>
-                <button type="button" class="botao">Informações</button>
+                <button type="button" class="botao" onclick="telaInformacao()">Informações</button>
             </div>
             <div>
-                <button type="button" class="botao">Configurações</button>
+                <button type="button" class="botao" onclick="telaRelatorio()">Relatório</button>
+            </div>
+            <div>
+                <button type="button" class="botao" onclick="telaConfig()">Configurações</button>
             </div>
         </div>
         
@@ -39,59 +43,62 @@
         <div class="dois-divs">
             <h1>Controláveis</h1>
             <div class="div-intern" >
-                <div><button class="botao-divs" onclick="cliqueVermelho()" >LED VERMELHO</button></div>
-                <div style="width: 80px;"><label id="led_vermelho"></label></div>
+                <div>
+                    <button class="botao-divs led-vermelho" onclick="cliqueVermelho()">
+                        LED VERMELHO
+                    </button></div>
+                <div class="div-2"><label id="led_vermelho">Desligado</label></div>
             </div>
             <div class="div-intern">
-                <div><button class="botao-divs" onclick="cliqueVerde()">LED VERDE</button></div>
-                <div style="width: 80px;"><label id="led_verde"></label></div>
+                <div><button class="botao-divs led-verde" onclick="cliqueVerde()">LED VERDE</button></div>
+                <div class="div-2"><label id="led_verde">Desligado</label></div>
             </div>
             <div class="div-intern" >
                 
-                <div><button class="botao-divs" onclick="cliqueAmarelo()">LED AMARELO</button></div>
-                <div style="width: 80px;"><label id="led_amarelo"></label></div>
+                <div><button class="botao-divs led-amarelo" onclick="cliqueAmarelo()">LED AMARELO</button></div>
+                <div class="div-2"><label id="led_amarelo">Desligado</label></div>
             </div>
             <div class="div-intern" >
                 
-                <div><button class="botao-divs" onclick="cliqueRele_1()">RELÉ 1</button></div>
-                <div style="width: 80px;"><label id="rele_1"></label></div>
+                <div><button class="botao-divs rele" onclick="cliqueRele_1()">RELÉ 1</button></div>
+                <div class="div-2"><label id="rele_1">Desligado</label></div>
             </div>
             <div class="div-intern" >
                 
-                <div><button class="botao-divs" onclick="cliqueRele_2()">RELÉ 2</button></div>
-                <div style="width: 80px;"><label id="rele_2"></label></div>
+                <div><button class="botao-divs rele" onclick="cliqueRele_2()">LÂMPADA</button></div>
+                <div class="div-2"><label id="rele_2">Desligado</label></div>
             </div>
             <div class="div-intern" >
                 
-                <div><button class="botao-divs" onclick="cliqueRele_3()">RELÉ 3</button></div>
-                <div style="width: 80px;"><label id="rele_3"></label></div>
+                <div><button class="botao-divs rele" onclick="cliqueRele_3()">MOTOR</button></div>
+                <div class="div-2"><label id="rele_3">Desligado</label></div>
             </div>
         </div>
         <div class="dois-divs">
             <h1>Sensores</h1>
-            <div class="div-intern" >
-                <label>LUMINOSIDADE</label>
-                <label id="luminosidade"></label>
+            <div class="div-3" >
+                <div style="width: 200px;"><label>LUMINOSIDADE</label></div>
+                <div class="div-2"><label id="luminosidade">0 cd</label></div>
             </div>
-            <div class="div-intern" >
-                <label>UMIDADE</label>
-                <label id="umidade"></label>
+            <div class="div-3">
+                <div style="width: 200px;"><label>UMIDADE</label></div>
+                <div class="div-2"><label id="umidade"></label></div>
             </div>
-            <div class="div-intern" >
-                <label>TEMPERATURA</label>
-                <label id="temperatura"></label>
+            <div class="div-3" >
+                <div style="width: 200px;"><label>TEMPERATURA</label></div>
+                <div class="div-2"><label id="temperatura">0 °C</label></div>
             </div>
-            <div class="div-intern" >
-                <label>ENERGIA</label>
-                <label id="temperatura"></label>
+            <div class="div-3" >
+                <div style="width: 200px;"><label>ENERGIA</label></div>
+                <div class="div-2"><label id="energia">0 W</label></div>
             </div>
-            <div class="div-intern" >
-                <label>VELOCIDADE</label>
-                <label id="temperatura"></label>
+            <div class="div-3" >
+                <div style="width: 200px;"><label>VELOCIDADE</label></div>
+                <div class="div-2"><label id="velocidade">0 m/s</label></div>
             </div>
-            <div class="div-intern" >
-                <label>GÁS</label>
-                <label id="temperatura"></label>
+            <div class="div-3" >
+                <div style="width: 200px;"><label>GÁS</label></div>
+                <div class="div-2"><label id="gas"> - </label></div>
             </div>
         </div>
     </div>

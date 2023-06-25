@@ -7,9 +7,6 @@ header {
     
 }
 
-.fundo_corpo {
-    background: #2d2f4a;
-}
 
 .imagem {
     background-image: url(../../imagens/fundo.png);
@@ -108,102 +105,28 @@ header div{
     100% { background-position: 0 0; }
 }
 
-.botao-b {
-    transition-duration: 0.4s;
-    width: 200px;
-    padding: 20px;
-    font-size: 20px;
-}
-  
-.botao-b:hover {
-    background-color: #ff0000; /* Green */
-    color: white;
-}
+
 
 footer {
     background-color: #86ddec;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .corpo {
     display: flex;
-    flex-direction: row;
-    color: white;
-    background: #2d2f4a;
-}
-
-.dois-divs {
-    width: 50%;
-    text-align: center;
-    align-items: center;
-    display: flex;
     flex-direction: column;
+    color: rgb(0, 0, 0);
+    background: #ffffff;
 }
 
-.botao-divs {
-    width: 300px;
-    margin-right: 15px;
-    transition: all 0.3s ease;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-    7px 7px 20px 0px rgba(0,0,0,.1),
-    4px 4px 5px 0px rgba(0,0,0,.1);
-    outline: none;
-    background: rgb(216, 85, 85);
-    border: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+img {
+    margin: auto;
+    display: block;
+    padding-top: 10px;
+    height: 400px;
 }
 
-.botao-divs.led-verde{
-    background: rgb(142, 235, 111);
-}
-.botao-divs.led-amarelo{
-    background: rgb(228, 241, 89);
-}
-.botao-divs.rele{
-    background: rgb(111, 235, 233);
-}
-
-.botao-divs.led-vermelho:hover {
-    background: rgb(242, 111, 111);
-    background: linear-gradient(0deg, rgb(221, 67, 67) 0%, rgb(255, 15, 15) 100%);
-}
-.botao-divs.led-verde:hover {
-    background: rgb(101, 205, 120);
-    background: linear-gradient(0deg, rgb(114, 194, 105) 0%, rgb(94, 255, 0) 100%);
-}
-.botao-divs.led-amarelo:hover {
-    background: rgb(220, 242, 111);
-    background: linear-gradient(0deg, rgb(164, 164, 65) 0%, rgb(255, 255, 2) 100%);
-}
-.botao-divs.rele:hover {
-    background: rgb(85, 162, 180);
-    background: linear-gradient(0deg, rgb(65, 131, 164) 0%, rgb(16, 199, 255) 100%);
-}
-
-.div-intern {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    
-}
-
-.div-2 {
-    border: 1px solid rgb(0, 0, 0);
-    width: 250px;
-    background-color: black;
-    font-size: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-.div-3 {
-    display: flex;
-    flex-direction: row;
-    
-    width: 500px;
-    justify-content: space-around;
-    font-size: 20px;
-}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Informações</title>
+    <script src="../../validations.js"></script>
+    <script src="informacoes.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+    <script src="../../firebase-init.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="informacoes.css">
+</head>
+<body>
+    <header>
+        <div class="cabecalho-sup">
+            <div class="imagem" ></div>
+            <div>
+                <button type="button" class="botao-b" onclick="logout()">Sair</button>
+            </div>
+        </div>
+        <div class="cabecalho-inf">
+            <div>
+                <button type="button" class="botao" onclick="telaDispositivos()">Dispositivos e Sensores</button>
+            </div>
+            <div>
+                <button type="button" class="botao" onclick="telaInformacao()">Informações</button>
+            </div>
+            <div>
+                <button type="button" class="botao" onclick="telaRelatorio()">Relatório</button>
+            </div>
+            <div>
+                <button type="button" class="botao" onclick="telaConfig()">Configurações</button>
+            </div>
+        </div>
+        
+    </header>
+    <div class="corpo">
+        <h1>PLACA DE DESENVOLVIMENTO - ESP32</h1>
+        <h2>Sobre o ESP32</h2>
+        <p>
+            O ESP32 é uma placa de desenvolvimento extremamente versátil e poderosa. Combinando um processador dual-core de alto desempenho
+             com conectividade Wi-Fi e Bluetooth, o ESP32 oferece uma ampla gama de recursos para projetos de IoT (Internet das Coisas) 
+             e aplicações embarcadas.
+        </p>
+        <p>
+            O coração do ESP32 é seu processador Tensilica Xtensa LX6, que possui dois núcleos capazes de operar em velocidades de até 240
+             MHz. Isso permite uma execução eficiente de várias tarefas simultâneas e oferece um bom desempenho geral. Além disso, o 
+             ESP32 possui uma quantidade generosa de memória RAM, o que facilita a execução de aplicativos complexos e o armazenamento de
+              dados.
+        </p>
+        <p>
+            Uma das principais características do ESP32 é a sua conectividade sem fio. Ele suporta Wi-Fi 802.11 b/g/n, o que permite a comunicação com a Internet e com outros 
+            dispositivos conectados à rede local. Além disso, possui suporte para Bluetooth clássico e Bluetooth de baixa energia (BLE), ampliando 
+            ainda mais suas possibilidades de comunicação.
+
+            Com o ESP32, é possível desenvolver uma ampla variedade de projetos, desde simples dispositivos conectados até soluções 
+            mais avançadas. Ele é amplamente utilizado no desenvolvimento de produtos de IoT, como sistemas de monitoramento remoto,
+            automação residencial, wearables e até mesmo robótica.
+        </p>
+        <p>
+            O ESP32 também se destaca pela sua ampla compatibilidade com diferentes ambientes de programação. Ele suporta a plataforma de desenvolvimento 
+            Arduino, bem como o ambiente de desenvolvimento integrado (IDE) ESP-IDF da Espressif Systems. Essas opções permitem que desenvolvedores de 
+            diferentes níveis de experiência possam criar projetos usando a linguagem de programação C/C++ ou o ecossistema Arduino, dependendo de suas 
+            preferências e necessidades.
+
+            Em resumo, o ESP32 é uma placa de desenvolvimento altamente poderosa e versátil, oferecendo recursos de conectividade e desempenho que o tornam 
+            ideal para projetos de IoT e aplicações embarcadas. Com sua capacidade de processamento, conectividade sem fio e suporte a diferentes ambientes de
+            programação, o ESP32 abre um mundo de possibilidades para a criação de dispositivos inteligentes e inovadores.
+        </p>
+        <h2>Pinagem do ESP 32</h2>
+        <p>
+            O ESP32 possui uma variedade de pinos disponíveis para diferentes fins, incluindo GPIOs (General Purpose Input/Output), interfaces de comunicação, entradas analógicas, alimentação e terra. A seguir, está uma descrição básica da pinagem do ESP32:
+        </p>
+        <p>
+            1. GPIO (General Purpose Input/Output): O ESP32 possui um total de 34 pinos GPIO, numerados de 0 a 33. Esses pinos podem ser configurados como entradas ou saídas digitais para interagir com outros dispositivos eletrônicos.
+        </p>
+        <p>
+            2. Interfaces de comunicação: O ESP32 oferece várias interfaces de comunicação, incluindo:
+        </p>
+        <ul>
+            <li>UART (Universal Asynchronous Receiver/Transmitter): Os pinos RX e TX permitem a comunicação serial assíncrona.</li>
+            <li>I2C (Inter-Integrated Circuit): Os pinos SDA e SCL permitem a comunicação de curta distância com dispositivos compatíveis com I2C.</li>
+            <li>SPI (Serial Peripheral Interface): Os pinos MOSI, MISO, SCLK e SS permitem a comunicação em série com outros dispositivos compatíveis com SPI.</li>
+            <li>I2S (Inter-IC Sound): Os pinos WS, BCK, e DAT permitem a comunicação de áudio digital.</li>
+        </ul>
+        <p>3. Entradas analógicas: O ESP32 possui até 18 pinos que podem ser usados como entradas analógicas. Eles são numerados de 0 a 19, mas nem todos os números estão disponíveis em todas as placas ESP32.</p>
+        <p>4. Alimentação e terra: O ESP32 possui pinos para fornecimento de energia (3,3V e 5V) e pinos de terra (GND) para conexão adequada do sistema.</p>
+        <p>É importante observar que a pinagem do ESP32 pode variar ligeiramente dependendo da placa específica ou do fabricante. Portanto, ao usar o ESP32, é recomendável consultar o esquema elétrico ou a documentação da placa específica para obter informações precisas sobre a pinagem disponível.</p>
+
+        <img src="../../imagens/pinagem-esp.png" alt="">
+
+    </div>
+    <footer>
+        <p>TODOS OS DIREITOS RESERVADOS</p>
+        <p>Pré TCC - Copyright © 2023</p>
+    </footer>
+    
+</body>
+<script>
+    firebase.auth().onAuthStateChanged(user => {
+        if (!user){
+            window.location.href = "../../index.html";
+        }
+    })
+
+</script>
+
+</html>

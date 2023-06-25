@@ -18,8 +18,6 @@ var estado_atual_3;
 var estado_atual_4;
 var led_boolean;
 
-
-
 const database = firebase.database();
 const pathRef_led_vermelho = database.ref('Sensor/led_vermelho');
 const pathRef_led_verde = database.ref('Sensor/led_verde');
@@ -31,8 +29,8 @@ pathRef_led_vermelho.on('value', (snapshot) => { // leitura do led vermelho
     const data = snapshot.val();
     console.log(data); //Status
     var aux = "";
-    if (data == false){ aux = "desligado";
-    } else { aux = "ligado"; }
+    if (data == false){ aux = "Desligado";
+    } else { aux = "Ligado"; }
     led_vermelho.innerHTML = aux;
 });
 
@@ -40,8 +38,8 @@ pathRef_led_verde.on('value', (snapshot) => { // leitura do led verde
     const data = snapshot.val();
     console.log(data); //Status
     var aux = "";
-    if (data == false){ aux = "desligado";
-    } else { aux = "ligado"; }
+    if (data == false){ aux = "Desligado";
+    } else { aux = "Ligado"; }
     led_verde.innerHTML = aux;
 });
 
@@ -49,15 +47,15 @@ pathRef_led_amarelo.on('value', (snapshot) => { // leitura do led amarelo
     const data = snapshot.val();
     console.log(data); //Status
     var aux = "";
-    if (data == false){ aux = "desligado";
-    } else { aux = "ligado"; }
+    if (data == false){ aux = "Desligado";
+    } else { aux = "Ligado"; }
     led_amarelo.innerHTML = aux;
 });
 
 pathRef_luminosidade.on('value', (snapshot) => { // leitura da luminosidade
     const data = snapshot.val();
     console.log(data); //Status
-    luminosidade.innerHTML = data;
+    luminosidade.innerHTML = data+" cd";
 });
 
 pathRef_umidade.on('value', (snapshot) => { // leitura da umidade
@@ -125,3 +123,7 @@ const valores = {
     sensor_umidade: ()=> document.getElementById('sensor_umidade'),
     sensor_temperatura: ()=> document.getElementById('sensor_temperatura'),
 }
+
+
+
+  

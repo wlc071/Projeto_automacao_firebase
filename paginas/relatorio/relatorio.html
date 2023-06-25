@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Relatório</title>
+    <script src="../../validations.js"></script>
+    <script src="relatorio.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+    <script src="../../firebase-init.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="relatorio.css">
+</head>
+<body>
+    <header>
+        <div class="cabecalho-sup">
+            <div class="imagem" ></div>
+            <div>
+                <button type="button" class="botao-b" onclick="logout()">Sair</button>
+            </div>
+        </div>
+        <div class="cabecalho-inf">
+            <div>
+                <button type="button" class="botao" onclick="telaDispositivos()">Dispositivos e Sensores</button>
+            </div>
+            <div>
+                <button type="button" class="botao" onclick="telaInformacao()">Informações</button>
+            </div>
+            <div>
+                <button type="button" class="botao" onclick="telaRelatorio()">Relatório</button>
+            </div>
+            <div>
+                <button type="button" class="botao" onclick="telaConfig()">Configurações</button>
+            </div>
+        </div>
+        
+    </header>
+    <div class="corpo">
+        <h1>RELATÓRIO GERAL<button style="width: 200px; display:block; margin:auto">Gráfico</button></h1>
+        <table width="100%" >
+            <tr>
+              <td width="25%" height="20%" style="border: solid; color:white; background-color:black">DISPOSITIVO/SENSOR</td>
+              <td width="25%" style="border: solid; color:white; background-color:black">LEITURA </td>
+              <td width="25%" style="border: solid; color:white; background-color:black">QUANTID. ON/OFF</td>
+              <td width="25%" style="border: solid; color:white; background-color:black">TEMPO ATIVO</td>
+            </tr>
+            <tr>
+              <td height="20%">LED VERMELHO</td>
+              <td>Desligado</td>
+              <td>0</td>
+              <td>0 min</td>
+            </tr>
+            <tr>
+                <td height="20%">LED VERDE</td>
+                <td>Desligado</td>
+                <td>0</td>
+                <td>0 min</td>
+            </tr>
+            <tr>
+                <td height="20%">LED AMARELO</td>
+                <td>Desligado</td>
+                <td>0</td>
+                <td>0 min</td>
+            </tr>
+            <tr>
+                <td height="20%">RELÉ</td>
+                <td>Desligado</td>
+                <td>0</td>
+                <td>0 min</td>
+            </tr>
+            <tr>
+                <td height="20%">LAMPADA</td>
+                <td>Desligado</td>
+                <td>0</td>
+                <td>0 min</td>
+            </tr>
+            <tr>
+                <td height="20%">SENSOR UMIDADE</td>
+                <td>Desligado</td>
+                <td>0</td>
+                <td>0 min</td>
+            </tr>
+            <tr>
+                <td height="20%">SENSOR TEMPERATURA</td>
+                <td>Desligado</td>
+                <td>0</td>
+                <td>0 min</td>
+            </tr>
+            <tr>
+                <td height="20%">SENSOR LUMINOSIDADE</td>
+                <td>Desligado</td>
+                <td>0</td>
+                <td>0 min</td>
+            </tr>
+            <tr>
+                <td height="20%">MOTOR</td>
+                <td>Desligado</td>
+                <td>0</td>
+                <td>0 min</td>
+            </tr>
+          </table>
+    </div>
+    <footer>
+        <p>TODOS OS DIREITOS RESERVADOS</p>
+        <p>Pré TCC - Copyright © 2023</p>
+    </footer>
+    
+</body>
+<script>
+    firebase.auth().onAuthStateChanged(user => {
+        if (!user){
+            window.location.href = "../../index.html";
+        }
+    })
+
+</script>
+
+</html>
