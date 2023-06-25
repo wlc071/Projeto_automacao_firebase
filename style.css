@@ -1,0 +1,84 @@
+body {
+    background-color: #212448;
+    height: 100vh;
+    margin:0;
+}
+
+.imagem-login {
+    background-image: url(imagens/logo-index.png);
+    width: 500px;
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+form {
+    width: 300px;
+}
+
+.centralize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.loading label {
+    font-size: 24px;
+}
+
+input {
+    border: none;
+}
+
+input, button {
+    padding: 10px;
+    width: -webkit-fill-available;
+}
+
+button {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+button[disabled]{
+    opacity: 0.7;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+.clear {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.solid {
+    background: white;
+    border: none;
+    color: rgb(45, 211, 111);
+}
+
+.outline {
+    background: transparent;
+    border: none;
+    border: 1px solid white;
+}
+
+.error {
+    color: white;
+    background: red;
+    display: none;
+}

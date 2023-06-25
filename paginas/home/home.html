@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Inicio</title>
+    <script src="../../validations.js"></script>
+    <script src="home.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+    <script src="../../firebase-init.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <div class="cabecalho-sup">
+            <div class="imagem" ></div>
+            <div>
+                <button type="button" class="botao-b" onclick="logout()">Sair</button>
+            </div>
+        </div>
+        <div class="cabecalho-inf">
+            <div>
+                <button type="button" class="botao">Dispositivos e Sensores</button>
+            </div>
+            <div>
+                <button type="button" class="botao">Informações</button>
+            </div>
+            <div>
+                <button type="button" class="botao">Configurações</button>
+            </div>
+        </div>
+        
+    </header>
+    <div class="corpo">
+        <div class="dois-divs">
+            <h1>Controláveis</h1>
+            <div class="div-intern" >
+                <div><button class="botao-divs" onclick="cliqueVermelho()" >LED VERMELHO</button></div>
+                <div style="width: 80px;"><label id="led_vermelho"></label></div>
+            </div>
+            <div class="div-intern">
+                <div><button class="botao-divs" onclick="cliqueVerde()">LED VERDE</button></div>
+                <div style="width: 80px;"><label id="led_verde"></label></div>
+            </div>
+            <div class="div-intern" >
+                
+                <div><button class="botao-divs" onclick="cliqueAmarelo()">LED AMARELO</button></div>
+                <div style="width: 80px;"><label id="led_amarelo"></label></div>
+            </div>
+            <div class="div-intern" >
+                
+                <div><button class="botao-divs" onclick="cliqueRele_1()">RELÉ 1</button></div>
+                <div style="width: 80px;"><label id="rele_1"></label></div>
+            </div>
+            <div class="div-intern" >
+                
+                <div><button class="botao-divs" onclick="cliqueRele_2()">RELÉ 2</button></div>
+                <div style="width: 80px;"><label id="rele_2"></label></div>
+            </div>
+            <div class="div-intern" >
+                
+                <div><button class="botao-divs" onclick="cliqueRele_3()">RELÉ 3</button></div>
+                <div style="width: 80px;"><label id="rele_3"></label></div>
+            </div>
+        </div>
+        <div class="dois-divs">
+            <h1>Sensores</h1>
+            <div class="div-intern" >
+                <label>LUMINOSIDADE</label>
+                <label id="luminosidade"></label>
+            </div>
+            <div class="div-intern" >
+                <label>UMIDADE</label>
+                <label id="umidade"></label>
+            </div>
+            <div class="div-intern" >
+                <label>TEMPERATURA</label>
+                <label id="temperatura"></label>
+            </div>
+            <div class="div-intern" >
+                <label>ENERGIA</label>
+                <label id="temperatura"></label>
+            </div>
+            <div class="div-intern" >
+                <label>VELOCIDADE</label>
+                <label id="temperatura"></label>
+            </div>
+            <div class="div-intern" >
+                <label>GÁS</label>
+                <label id="temperatura"></label>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>TODOS OS DIREITOS RESERVADOS</p>
+        <p>Pré TCC - Copyright © 2023</p>
+    </footer>
+    
+</body>
+<script>
+    firebase.auth().onAuthStateChanged(user => {
+        if (!user){
+            window.location.href = "../../index.html";
+        }
+    })
+
+</script>
+
+</html>
